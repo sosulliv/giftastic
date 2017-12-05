@@ -24,9 +24,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type='text/javascript' src='crazy.js'></script>
   <script type="text/javascript">
-    var giphy = crazy.giphy;
     var limit=10;
     var  animals =  ["cat", "dog", "hamster", "armadillo"];
     var search_term;
@@ -56,6 +54,9 @@
 
 function main() {
 
+
+$.get("crazy.json", function(data) {
+       var giphy=atob(data.crazy);
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         search_term + "&api_key="+giphy+"&limit=" +limit;
 
@@ -94,8 +95,9 @@ function main() {
             }
           }
         });
-
+  });
     }
+
 
 
 
