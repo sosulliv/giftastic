@@ -56,7 +56,7 @@ function main() {
 
 $.get("crazy.json", function(data) {
        //console.log(data.crazy);
-       var giphy=atob(data.crazy);
+      var giphy=atob(data.crazy);
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         search_term + "&api_key="+giphy+"&limit=" +limit;
 
